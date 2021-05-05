@@ -51,7 +51,7 @@ public class UserController {
 
         //发送邮件
         sender.sendEmail(message, user.getEmail());
-
+        //在session中放置验证码和user对象
         session.setAttribute("validation", validation);
         session.setAttribute("user", user);
         return "validation";
