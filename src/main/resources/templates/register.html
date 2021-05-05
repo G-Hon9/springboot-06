@@ -1,0 +1,100 @@
+<!--
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+    <h2 >用户注册</h2>
+    <form th:action="@{/register}" th:object="${user}" method="post">
+        <input type="text" placeholder="用户名" name="userName" th:value="*{userName}"><br>
+        <input type="text" placeholder="密码" name="password" th:value="*{password}"><br>
+        <input type="text" placeholder="邮箱" name="email"><font color="red" th:errors="${user.email}"></font><br>
+        <input type="submit" value="注册"/><br>
+    </form>
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>注册界面</title>
+</head>
+<style>
+    body {
+        padding:0;  /*去除内边距袭*/
+        border:0;   /*去除边框*/
+        margin:0;   /*去除外边距*/
+    }
+    #page{
+        background-image:url("./1.jpg");
+        height:1000px;
+        width:auto;
+        position:relative;
+    }
+    #register{
+        background-image:url("./2.jpg");
+        height:280px;
+        width:400px;
+        margin-left:600px;
+        margin-top:200px;
+        position:absolute;
+        text-align:center;
+    }
+    #header{
+        font-family:Tahoma, Geneva, sans-serif;
+        font-size:25px;
+        color:#3083EF;
+    }
+    hr{
+        height: 2px;
+        width:300px;
+        background-color:#75B6F6 ;
+
+    }
+    #xinxi{
+        font-family:Tahoma, Geneva, sans-serif;
+        font-size:15px;
+        color:#A3CCFB;
+        line-height:10px;
+    }
+    #btn{
+        background-color:#0068D0;
+        border:0px;
+        color: seashell;
+        text-align: center;
+        height:30px;
+        width:100px;
+    }
+
+</style>
+<body>
+<div id="page">
+    <div id="register">
+        <p id="header" style="margin-bottom:2px;">用户注册页面</p>
+        <hr />
+        <div id="xinxi">
+            <form th:action="@{/register}" th:object="${user}" method="post">
+                <div style="margin-top:15px;"><input type="text" placeholder="用户名" name="userName" th:value="*{userName}"></div>
+                <div style="margin-top:15px;"><input type="text" placeholder="密码" name="password" th:value="*{password}"></div>
+                <div style="margin-top:15px;">
+                    <input type="text" placeholder="邮箱" name="email">
+                    <font color="red" th:errors="${user.email}"></font>
+                </div>
+                <div style="margin-top:25px;"><input type="submit" value="注册"/><br></div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
